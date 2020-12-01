@@ -1,0 +1,17 @@
+by clicking on the copyrigth sign we get this page: 
+/index.php?page=e43ad1fdc54babe674da7c7b8f0127bde61de3fbe01def7d00f151c2fcca6d1c
+
+after we Inspecting the HTML Page we find two critical information in the comment: 
+
+<!--
+You must cumming from : "https://www.nsa.gov/" to go to the next step
+-->
+<!--Let's use this browser : "ft_bornToSec". It will help you a lot.
+-->
+
+we need to change the header of the http request: the refrer and the user -agent 
+
+to do this we can use Curl cmd : 
+curl -s -A 'ft_bornToSec' --referer "https://www.nsa.gov/" "http://${IP}/?page=e43ad1fdc54babe674da7c7b8f0127bde61de3fbe01def7d00f151c2fcca6d1c" > flag.html
+
+the result give us an html with the flag

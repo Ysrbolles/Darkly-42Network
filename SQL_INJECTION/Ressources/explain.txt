@@ -27,3 +27,6 @@ TABLE COLUMNS
 
     after Decrypt the hash with md5 we get ===> 'FortyTwo' 
     and Crypt it with Sha256 we get the flag ===> '9995cae900a927ab1500d317dfcc52c0ad8a521bea878a8e9fa381b41459b646'
+
+how te secure: 
+    Don't use dynamic SQL – don't construct queries with user input
