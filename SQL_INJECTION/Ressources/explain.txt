@@ -15,8 +15,8 @@ TABLE COLUMNS
     * Commentaire
     * countersign
 
-    we can foud at id 5  l
-    ast_name = "GetThe", 
+    we can foud at id 5  
+    last_name = "GetThe", 
     first_name = 'falg' ,
     town = '42', 
     country = '42', 
@@ -26,7 +26,7 @@ TABLE COLUMNS
 
 
     after Decrypt the hash with md5 we get ===> 'FortyTwo' 
-    and Crypt it with Sha256 we get the flag ===> '10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5'
+    we Crypt it with Sha256 we get the flag ===> '10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5'
 
 how te secure: 
     Don't use dynamic SQL – don't construct queries with user input
