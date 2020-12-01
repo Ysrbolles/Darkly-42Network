@@ -1,0 +1,8 @@
+On http://10.30.237.180/?page=recover we Inspect the HTML Page 
+And we Found a form with POST methode and an Hidden Input
+
+we can change the html Code ANd Deleteing the bidden input with navigator tools.
+the Input Shows And we put a random value then submit 
+
+how to secure:
+don't send the value in a hidden input
