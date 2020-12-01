@@ -14,3 +14,16 @@ TABLE COLUMNS
     * planet
     * Commentaire
     * countersign
+
+    we can foud at id 5  l
+    ast_name = "GetThe", 
+    first_name = 'falg' ,
+    town = '42', 
+    country = '42', 
+    planet = '42', 
+    Commentaire= "Decrypt this password -> then lower all the char. Sh256 on it and it's good !",
+    countersign = '5ff9d0165b4f92b14994e5c685cdce28'
+
+
+    after Decrypt the hash with md5 we get ===> 'FortyTwo' 
+    and Crypt it with Sha256 we get the flag ===> '9995cae900a927ab1500d317dfcc52c0ad8a521bea878a8e9fa381b41459b646'
