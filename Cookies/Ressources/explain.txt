@@ -1,9 +1,11 @@
-in a Cookie Inspector we can see that the Cookie is set by a website: 
+in a Cookie Inspector we can see that the Cookie is set by the website: 
 
-name: I_am_admin => value: 68934a3e9455fa72420237eb05902327
+name: I_am_admin  
+value: 68934a3e9455fa72420237eb05902327
 
 the value is encrypted on md5 wich mean 'false', we change the Cookie value to 'true' encrypted on md5
-After refresh the page, an alert pops the flag
+After refresh the page, an alert pops with the flag
 
-how to secure:
-don't put critical information on Cookies
+How to secure:
+    - Don't put critical information on Cookies
+    - Use a secure algorithm for hashing.

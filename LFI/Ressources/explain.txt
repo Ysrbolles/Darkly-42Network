@@ -8,8 +8,6 @@ The ‘../’ characters used in the example above represent a directory travers
 We can see that the contents of /etc/passwd are displayed on the screen. A lot of useful information about the host can be obtained this way
 
 how to secure: 
-    -Use a whitelist of files and ignore every other filename and path.
-    -Save the file paths in a database and assign an ID to each of them. By doing so, users only see the ID and are not able to view or change the path.
     -Use a whitelist of filenames and ignore every other filename and path.
+    -Save the file paths in a database and assign an ID to each of them. By doing so, users only see the ID and are not able to view or change the path.
     -Instead of including files on the web server, store their content in databases where possible.
-    -Instruct the server to automatically send download headers and not execute files in a specific directory such as /download/. That way you can point the user directly to the file on the server without having to write additional code for the download. An example link could look like:https://example.com/downloads/brochure2.pdf

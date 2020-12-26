@@ -1,4 +1,4 @@
-we thought we had to submit the form with the Name field field.
+we thought we had to submit the form with the Name field
 Inspecting the source code we see 2 interesing facts :
  1) the forms calls the validate_form() js at submission checking that the fields are note empty
     (<form method="post" name="guestform" onsubmit="return validate_form(this)">)
@@ -9,7 +9,6 @@ Inspecting the source code we see 2 interesing facts :
  On the console we see an error message concerning checkForm(). It doesn't exist.
  It would be good to implement it and change the form behavior.
  Still in the consolle we implement the function this way :
-
 	function checkForm()
 	{
 		document.guestform.setAttribute("onsubmit", "return true");
@@ -18,7 +17,9 @@ This snippet of code can change the "onsubmit" attribut of the form's name eleme
 without any check on client side. But it doesn't work
 
 Now we can try a Cross-Site Scripting (XSS).
-We put a simple script in the message part and validate. We get the flag.
+We put a simple script in the message part and validate. We got the flag.
+
+Also we have another way to get the flag, is to just enter "script" in name or message input
 
 How to secure :
- - sanitize input
+ - Sanitize and check inputs, also you can encode the input

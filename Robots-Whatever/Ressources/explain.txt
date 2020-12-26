@@ -1,4 +1,4 @@
-with nmap -A we get 
+with nmap -A we got 
 
 PORT     STATE SERVICE VERSION
 80/tcp   open  http    nginx 1.8.0
@@ -16,10 +16,12 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 22.13 seconds
 
-we can go at http://10.30.237.180/whatever 
+we can go at http://{IP}/whatever 
 after we dawnload the htpasswd file, we found a user:pwd as root:8621ffdbc5698829397d97767ac13db3
 
 we decode the password with the md5 hash and we get 'dragon'
 
+we used the credentions to login in http://{IP}/admin, we got the flag
+
 how to secure:
-make sure to delete all files not useful 
+    - make sure to delete all files not useful, or hide it for public

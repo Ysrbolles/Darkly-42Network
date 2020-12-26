@@ -2,8 +2,9 @@ We did not find a sql injection possibility on the page http://{IP}/?page=signin
 
 that's why we try to bruteforce the signin page.
 
-we a brutforce script : bruteForce.sh that take a list of must used password.
+we attacked the login page with a bruteforce script : bruteForce.sh that take a list of must used passwords.
 we can found lists of password used in: https://wiki.skullsecurity.org/Passwords.
 
 How to secure:
-    - implement limitation on the number of request possible by an ip and block it
+    - Request from your users to use hard passwords.
+    - Implement limitation on the number of request possible by an ip and block it

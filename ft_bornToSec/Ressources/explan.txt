@@ -1,20 +1,22 @@
-by clicking on the copyrigth sign we get this page: 
-/index.php?page=e43ad1fdc54babe674da7c7b8f0127bde61de3fbe01def7d00f151c2fcca6d1c
+by clicking on the copyrigth sign we got a page with this url: 
+http://${IP}/?page=e43ad1fdc54babe674da7c7b8f0127bde61de3fbe01def7d00f151c2fcca6d1c
 
-after we Inspecting the HTML Page we find two critical information in the comment: 
+after we Inspecting the HTML Page we found two critical information in the comment: 
 
 <!--
 You must cumming from : "https://www.nsa.gov/" to go to the next step
 -->
-<!--Let's use this browser : "ft_bornToSec". It will help you a lot.
+
+<!--
+Let's use this browser : "ft_bornToSec". It will help you a lot.
 -->
 
-we need to change the header of the http request: the refrer and the user -agent 
+we need to change the header of the http request: the refrer and the user-agent 
 
-to do this we can use Curl cmd : 
-curl -s -A 'ft_bornToSec' --referer "https://www.nsa.gov/" "http://${IP}/?page=e43ad1fdc54babe674da7c7b8f0127bde61de3fbe01def7d00f151c2fcca6d1c" > flag.html
+to do this we can use curl cmd: 
+curl -A 'ft_bornToSec' -e "https://www.nsa.gov/" "http://${IP}/?page=e43ad1fdc54babe674da7c7b8f0127bde61de3fbe01def7d00f151c2fcca6d1c" > resp.html
 
-the result give us an html with the flag
+we found the flag in resp.html file
 
 how to secure:
-    - Check the request in the server side
+    - Check the request headers in the server side

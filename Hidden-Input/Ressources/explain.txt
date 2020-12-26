@@ -1,8 +1,7 @@
-On http://10.30.237.180/?page=recover we Inspect the HTML Page 
-And we Found a form with POST methode and an Hidden Input
+On http://{IP}/?page=recover we inspect the HTML Page 
+And we found a form with POST method and a hidden input conatins an email as a value
 
-we can change the html Code ANd Deleteing the bidden input with navigator tools.
-the Input Shows And we put a random value then submit 
+Just after change the value of this input and submit the form, we got the flag.
 
-how to secure:
-don't send the value in a hidden input
+How to secure:
+    - don't send the value in a hidden input.

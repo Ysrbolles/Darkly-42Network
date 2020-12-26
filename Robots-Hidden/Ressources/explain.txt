@@ -1,0 +1,65 @@
+with nmap -A we got 
+
+PORT     STATE SERVICE VERSION
+80/tcp   open  http    nginx 1.8.0
+| http-robots.txt: 2 disallowed entries
+|_/whatever /.hidden
+|_http-server-header: nginx/1.8.0
+|_http-title: BornToSec - Web Section
+4242/tcp open  ssh     OpenSSH 5.9p1 Debian 5ubuntu1.7 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   1024 c1:03:76:40:29:e8:ab:f6:8a:9f:1c:71:6e:23:e0:58 (DSA)
+|   2048 89:95:1a:c3:7c:1b:fc:3c:34:1d:76:d5:c9:fa:86:03 (RSA)
+|_  256 09:86:1a:be:13:a5:a1:0c:7f:f7:55:50:ac:7a:c7:1a (ECDSA)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 22.13 seconds
+
+After we found the robots.txt file we noted that there is a file with the name: .hidden
+
+We accessed that file from http://{IP}/.hidden/, and we found a list of directories and a README file, 
+and each directory has recursively other subdirectories and you got the README file in each directory. 
+so after open some README file manually we realized that there is a lot of sentences repeated in many files, 
+so we made a script with Nodejs that help us to fetch all files and get just the unique sentences
+
+
+// Result of the script:
+{
+  url: 'http://{IP}/.hidden/amcbevgondgcrloowluziypjdh/acbnunauucfplzmaglkvqgswwn/ayuprpftypqspruffmkuucjccv/README',
+  content: 'Demande à ton voisin de gauche  \n'
+}
+{
+  url: 'http://{IP}/.hidden/amcbevgondgcrloowluziypjdh/acbnunauucfplzmaglkvqgswwn/becskiwlclcuqxshqmxhicouoj/README',
+  content: "Non ce n'est toujours pas bon ...\n"
+}
+{
+  url: 'http://{IP}/.hidden/bnqupesbgvhbcwqhcuynjolwkm/acbnunauucfplzmaglkvqgswwn/ayuprpftypqspruffmkuucjccv/README',
+  content: 'Demande à ton voisin de droite  \n'
+}
+{
+  url: 'http://{IP}/.hidden/amcbevgondgcrloowluziypjdh/acbnunauucfplzmaglkvqgswwn/cqqssunxyhjgdwjoafgyzoollx/README',
+  content: 'Demande à ton voisin du dessous \n'
+}
+{
+  url: 'http://{IP}/.hidden/bnqupesbgvhbcwqhcuynjolwkm/bvwrujeymrvzurvywnjxzlfkwa/ayuprpftypqspruffmkuucjccv/README',
+  content: "Tu veux de l'aide ? Moi aussi !  \n"
+}
+{
+  url: 'http://{IP}/.hidden/ceicqljdddshxvnvdqzzjgddht/acbnunauucfplzmaglkvqgswwn/ayuprpftypqspruffmkuucjccv/README',
+  content: 'Toujours pas tu vas craquer non ?\n'
+}
+{
+  url: 'http://{IP}/.hidden/amcbevgondgcrloowluziypjdh/acbnunauucfplzmaglkvqgswwn/dupoqdxhvrbqhaqokxsiigjnph/README',
+  content: 'Demande à ton voisin du dessus  \n'
+}
+{
+  url: 'http://{IP}/.hidden/whtccjokayshttvxycsvykxcfm/igeemtxnvexvxezqwntmzjltkt/lmpanswobhwcozdqixbowvbrhw/README',
+  content: '99dde1d35d1fdd283924d84e6d9f1d820\n'
+}
+
+
+So as you see, finally, we found the flag in this path: http://{IP}/.hidden/whtccjokayshttvxycsvykxcfm/igeemtxnvexvxezqwntmzjltkt/lmpanswobhwcozdqixbowvbrhw/README
+
+how to secure:
+    - make sure to delete all files not useful, or hide it for public

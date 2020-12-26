@@ -1,8 +1,8 @@
 we can found in every page a footer with Social Media redirect links like :
 
-http://10.12.100.155/index.php?page=redirect&site=instagram
+http://{IP}/index.php?page=redirect&site=instagram
 
-after we change the site value we can see the magic we get the flag
+after we change the site value we can see the magic, so we got a new flag
 
-how to secure: 
-    sanitize the input
+How to secure: 
+    - Sanitize and check the params values.
