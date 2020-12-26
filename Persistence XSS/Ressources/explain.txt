@@ -1,0 +1,24 @@
+we thought we had to submit the form with the Name field field.
+Inspecting the source code we see 2 interesing facts :
+ 1) the forms calls the validate_form() js at submission checking that the fields are note empty
+    (<form method="post" name="guestform" onsubmit="return validate_form(this)">)
+ 2) The form button calls the checkForm() function on click (<td><input name="btnSign" type="Submit" value="Sign Guestbook" onClick="return checkForm();"></td>)
+
+ The onClick button is triggered before the submission event of the form.
+ To observe this behavior we submit it.
+ On the console we see an error message concerning checkForm(). It doesn't exist.
+ It would be good to implement it and change the form behavior.
+ Still in the consolle we implement the function this way :
+
+	function checkForm()
+	{
+		document.guestform.setAttribute("onsubmit", "return true");
+	}
+This snippet of code can change the "onsubmit" attribut of the form's name element in order to submit the form
+without any check on client side. But it doesn't work
+
+Now we can try a Cross-Site Scripting (XSS).
+We put a simple script in the message part and validate. We get the flag.
+
+How to secure :
+ - sanitize input
