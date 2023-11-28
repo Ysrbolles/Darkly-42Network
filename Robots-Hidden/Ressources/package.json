@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
-    "jssoup": "0.0.12"
+    "jssoup": "0.0.13"
   }
 }
